@@ -17,11 +17,11 @@ export const highlightSelected = id => {
 		el.classList.remove("results__link--active");
 	});
 	document
-		.querySelector(`a[href="#${id}"]`)
+		.querySelector(`.results__link[href="#${id}"]`)
 		.classList.add("results__link--active");
 };
 
-const limitRecipeTitle = (title, limit = 17) => {
+export const limitRecipeTitle = (title, limit = 17) => {
 	const newTitle = [];
 	if (title.length > limit) {
 		title.split(" ").reduce((acc, cur) => {
@@ -68,19 +68,19 @@ const createButton = (page, type) => `
 
 
 <!--
-                <button class="btn-inline results__btn--prev">
-                    <svg class="search__icon">
-                        <use href="img/icons.svg#icon-triangle-left"></use>
-                    </svg>
-                    <span>Page 1</span>
-                </button>
-                <button class="btn-inline results__btn--next">
-                    <span>Page 3</span>
-                    <svg class="search__icon">
-                        <use href="img/icons.svg#icon-triangle-right"></use>
-                    </svg>
-                </button>
-                -->`;
+		<button class="btn-inline results__btn--prev">
+				<svg class="search__icon">
+						<use href="img/icons.svg#icon-triangle-left"></use>
+				</svg>
+				<span>Page 1</span>
+		</button>
+		<button class="btn-inline results__btn--next">
+				<span>Page 3</span>
+				<svg class="search__icon">
+						<use href="img/icons.svg#icon-triangle-right"></use>
+				</svg>
+		</button>
+		-->`;
 
 export const renderButtons = (page, numResults, resPerPage) => {
 	const pages = Math.ceil(numResults / resPerPage);

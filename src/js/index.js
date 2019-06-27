@@ -15,7 +15,6 @@ import { elements, renderLoader, clearLoader } from "./views/base";
 // --- Liked recipes
 
 const state = {};
-window.state = state;
 
 // Search Controller
 const controlSearch = async () => {
@@ -76,9 +75,6 @@ const controlRecipe = async () => {
 		// Create new recipe object
 		state.recipe = new Recipe(id);
 
-		// TESTING
-		window.r = state.recipe;
-
 		try {
 			// Get recipe data and parse
 			await state.recipe.getRecipe();
@@ -135,8 +131,6 @@ elements.shopping.addEventListener("click", e => {
 });
 
 // Like Controller
-
-// Testing
 
 const controlLike = () => {
 	if (!state.likes);
